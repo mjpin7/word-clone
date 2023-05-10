@@ -1,6 +1,6 @@
 import React from "react";
 
-function GuessInput({ guesses, setGuesses }) {
+function GuessInput({ guesses, setGuesses, status }) {
   const [guess, setGuess] = React.useState("");
   return (
     <form
@@ -25,6 +25,7 @@ function GuessInput({ guesses, setGuesses }) {
         maxLength={5}
         pattern="[a-zA-Z]{5}"
         title="5 letter word"
+        disabled={status !== "running"}
       />
     </form>
   );
